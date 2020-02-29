@@ -1,0 +1,190 @@
+﻿AVIRA End User License Agreement – EULA 
+
+IMPORTANT NOTICE: CAREFULLY READ AND BE SURE YOU UNDERSTAND THIS EULA BEFORE YOU ACCEPT ITS PROVISIONS. AVIRA IS WILLING TO LICENSE THE SOFTWARE (AS DEFINED BELOW) TO YOU AS A CONSUMER OR AS AN ENTREPRENEUR (“YOU”) ONLY IF YOU ACCEPT ALL OF THE PROVISIONS OF THIS EULA AND ITS RELATED TERMS AND CONDITIONS. BY CLICKING THE “I AGREE” OR “YES” BUTTON, BY LOADING THE SOFTWARE OR BY OTHERWISE INDICATING ASSENT, YOU ACCEPT THIS EULA AND THIS EULA WILL BECOME A LEGAL AND ENFORCEABLE CONTRACT BETWEEN AVIRA AND YOU INDIVIDUALLY, IF YOU ARE A CONSUMER OR BETWEEN AVIRA AND YOUR BUSINESS ENTITY, IF YOU ARE AN ENTREPRENEUR. IF YOU DO NOT AGREE TO THESE PROVISIONS, THEN CLICK “CANCEL”, “NO” OR “CLOSE WINDOW”. 
+
+If you are located outside the United States and Canada, note the additional provisions of section 17 which will apply to you. 
+
+TERMS 
+
+This EULA concerns Avira’s grant of a license to Software and any related user Documentation, to you. This EULA shall also apply to all Updates and Upgrades, insofar as Avira provides you with Updates and/or Upgrades after installation of the Software. 
+
+1. Definitions 
+
+1.1. Automatic Renewal – means a feature that provides for renewal of a License at the end of a License Term without the need of further notification. 
+
+1.2. Avira - means Avira, Inc., 425 Market Street, San Francisco, CA 94105, except if you are located outside the United States or Canada, Avira shall mean Avira Operations GmbH & Co. KG, Kaplaneiweg 1, 88069 Tettnang, Germany. 
+
+1.3. Computer - means any device that is able to process data with the assistance of a programmable calculation specification. 
+
+1.4. Consumer - means any natural person who is provided with any Software from Avira for personal or for use involving his/her family. 
+
+1.5. Customer - means a Consumer and/or Entrepreneur. 
+
+1.6. Documentation - means written materials, in printed or electronic form, describing the features of the Software and/or Updates and Upgrades and that are designed to assist you in effectively utilizing the Software, Updates and/or Upgrades. Such Documentation does not vary the terms of this EULA or its related Terms and Conditions. 
+
+1.7. Entrepreneur - means any natural person, legal entity or partnership, having legal capacity that is not engaged in personal or familial usage in ordering or receiving Software of Avira while performing its commercial or independent professional or other work. 
+
+1.8. Fee - means the price or the License fee to be paid for Software of Avira. 
+
+1.9. Freeware - means any Software that is provided to the Consumer free of charge. 
+
+1.10. License - means your right to use the Software subject to this EULA and the Terms and Conditions applicable as of date of conclusion of the relevant agreement. The License shall stipulate the nature and scope of your right to use the Software. For that Software for which an Update service is provided, the License shall also constitute your right to receive ongoing Updates/Upgrades during the License Term for the provided Software. 
+
+1.11. License Term - means the period for which a License to Software has been granted. The License Term commences as soon as you have received a Software Key. 
+
+1.12. Multiple Use - means simultaneous storage, simultaneous retention and any other simultaneous use of Software on several Computers and any use of such Software for which special licenses for Multiple Use are provided according to the respective product information. 
+
+1.13. Reseller - means a customer to whom Software is provided expressly for the purpose of resale. 
+
+1.14. Software - means Avira’s computer programs in their object code format, including any and all Updates and Upgrades thereto that Avira makes available and for which Avira has granted a license to you. 
+
+1.15. Terms and Conditions - mean the Standard Terms and Conditions of Business of Avira. See www.avira.com. As noted below, these Terms and Conditions apply in addition to, and supplement the provisions of, this EULA. 
+
+1.16. Trial License - means a License to use the Software for testing purposes for a limited period of time free of charge by a Customer. 
+
+1.17. Updates and Upgrades - mean the updating of the Software. Classification of the updating as an Update or Upgrade is at Avira’s sole discretion. 
+
+1.18. Update Service -means the ongoing updating of Software through Updates and/or Upgrades and the provision of such Updates and Upgrades to you by Avira. Some Software requires the Update Service for functional use. Avira may at its sole discretion render services under its Update Service as an Update or Upgrade. 
+
+2. Ownership Rights 
+
+The Software is protected by international copyright laws, treaties and other laws. Avira and its licensors own and retain all right, title and interest in and to the Software, including all copyrights, patents, trade secret rights, trademarks and other intellectual property rights. This EULA does not transfer to you any title to or in the Software. You do not acquire any rights to the Software except as specified in Sections 3 and 6, below. 
+
+3. License Grant 
+
+3.1. Avira hereby grants to you a non-exclusive, non-transferable License to use the Software subject to any restrictions contained herein or in the Terms and Conditions. 
+
+3.2. In addition: 
+
+3.2.1. As noted, the Terms and Conditions apply to this EULA. In the case of a conflict between this EULA and the Terms and Conditions, the Terms and Conditions shall apply. 
+
+3.2.2. For Software for which Updates and Upgrades are provided by Avira, your License includes the right to receive and use Upgrades and Updates for the License Term. For Software for which no Updates or Upgrades are available from Avira, you may use only the version of the Software for which you have paid for the License Term. 
+
+4. Provisions for Use 
+
+4.1. Software must not be reproduced, transferred or decompiled (i.e. recompilation into the source code), unless expressly permitted by this EULA or permitted according to law. If you wish to reverse engineer, decompile or disassemble the Software (hereinafter referred to as "Decompilation") for the purpose of achieving interoperability with other computer programs if allowed by law, you shall contact Avira before Decompilation of the Software and request the provision of the information necessary for the achievement of such interoperability. If Avira supplies such information concerning interoperability without undue delay, you shall not be entitled to decompile the Software. 
+
+4.2. Software for which no special Licenses for Multiple Use are available according to the relevant product information is restricted to use on one Computer by you. For this purpose, you may use any available Computer that meets the system requirements and for which the License was granted. Should you change the Computer, the Software must be deleted from the Computer on which the Software was previously installed before the reinstallation of the Software on a different Computer. For Software whose product information provides special Licenses for Multiple Use, Multiple Use shall be permissible only if, and to the extent that, you purchased and were granted the relevant type or number of Licenses by Avira. 
+
+4.3. You may not, nor may you permit another person to: 
+
+4.3.1. Copy (other than once for backup purposes) sublicense, rent, loan, or lease any portion of the Software. If you wish to use the Software on another computer, you must delete the program from your current computer before installing it on the other computer; 
+
+4.3.2. Modify, or create derivative works based upon, the Software, in whole or in part. 
+
+NOTE: TO DO SO VOIDS ANY AND ALL WARRANTIES THAT MAY APPLY; 
+
+4.3.3. Remove any proprietary notices, serial numbers, labels, or copy protection features from the Software; 
+
+4.3.4. Use the Software in special risk areas that require error-free, permanent operation of relevant systems and in which the failure of the Software may result in a direct risk for life, body or health or in substantial damages to property or the environment (high risk activities and high availability activities, including but not limited to the operation of nuclear facilities, weapon systems, aviation navigation or communication systems, life support systems and equipment, machine and production processes of pharmaceuticals and food production). Avira does not warrant or guarantee that the Software is fit for use in special risk areas. 
+
+4.3.5. Avira reserves all rights to bring an action to prohibit or stop any unauthorised use of Software by you, including but not limited to, claims for injunctive relief and damages. Unauthorised use by you may lead to criminal prosecution under the relevant laws. The provisions of this section 4.3.5 concerning reproduction and disclosure shall apply similarly for the user handbooks and other documents pertaining to the Software provided by Avira. 
+
+5. Your obligations 
+
+The setup of a functional hardware and software environment for the Software shall be the solely in your responsibility. The same shall apply to regular data backup within your EDP system. 
+
+6. Trial License and Freeware 
+
+A Trial License and a License for Freeware is provided to you free of charge and “as is” except for the operability of the Software and consequently Avira provides no warranty to you with regard to the Software. Avira does not provide product support for these Licenses and you may not use them in a production environment. Freeware is licensed for private use only. 
+
+7. Automatic Renewal 
+
+If you have signed up for Automatic Renewal of a License, unless terminated by any of the Parties at least 30 days prior to the end of the current License Term, the License Term will be renewed automatically at the then effective list price. The new License Term will have the same run-time as the previous License Term. 
+
+8. Effect of Termination or Expiration of the License 
+
+Termination or expiration of the License granted hereunder means that your right to use the Software and Updates and Upgrades ends immediately. You will then receive no further Updates and you must delete the Software, as well as all back-up copies from your computer. Avira may require you to provide written confirmation of the destruction or deletion of the materials referenced in this Section 8. 
+
+9. Technical Support 
+
+Avira offers technical support services. See www.avira.com. Such technical support shall be provided in Avira’s sole discretion without any guarantee or warranty of any kind. It is your responsibility to back up of all your existing data, software and programs before receiving any technical support from Avira. Avira reserves the right to refuse, suspend or terminate any technical support, in its sole discretion. 
+
+10. Limited Warranty and Disclaimer 
+
+10.1. Limited Warranty. Avira warrants that, for thirty (30) days from the date of purchase, any paid version of Software will operate substantially in accordance with the Documentation and that the media (e.g., CD ROM), if any, on which the Software is contained and provided to you will be free from defects in materials and workmanship. 
+
+10.2. Exclusive Customer Remedies. Your exclusive remedy for the breach of the foregoing limited warranty shall be, at Avira’s option, either (i) return of the Fee paid by you, if any, or (ii) replacement of the defective media on which the Software is contained. You must return any defective media to Avira or to the Reseller that provided the media to you, at your expense, with a copy of your receipt. This limited warranty is void if the defect has resulted from any accident or abuse, by you. 
+
+10.3. WARRANTY DISCLAIMER 
+
+EXCEPT FOR THE LIMITED WARRANTY SET FORTH ABOVE, ALL SOFTWARE IS PROVIDED “AS IS” AND AVIRA MAKES NO WARRANTY AS TO ITS USE OR PERFORMANCE. AVIRA MAKES NO WARRANTY OF ANY KIND AND EXPRESSLY DISCLAIMS ALL OTHER WARRANTIES OF ANY KIND WHETHER EXPRESS, IMPLIED, OR STATUTORY INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE. AVIRA ALSO EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES RELATING TO NONINFRINGEMENT OF THIRD PARTY RIGHTS, MERCHANTABILITY, SATISFACTORY QUALITY, OR ABILITY TO INTEGRATE THE SOFTWARE WITH OTHER PRODUCTS. YOU ASSUME RESPONSIBILITY FOR SELECTING THE SOFTWARE TO ACHIEVE YOUR INTENDED RESULTS, AND FOR THE INSTALLATION OF, USE OF, AND RESULTS OBTAINED FROM, THE SOFTWARE. WITHOUT LIMITING THE FOREGOING, AVIRA MAKES NO WARRANTY THAT THE SOFTWARE WILL PROTECT AGAINST ALL POSSIBLE THREATS, BE ERROR-FREE OR FREE FROM INTERRUPTIONS OR OTHER FAILURES, OR THAT THE SOFTWARE WILL MEET YOUR SPECIFIC REQUIREMENTS. 
+
+11. Limitation of Liability 
+
+UNDER NO CIRCUMSTANCES SHALL AVIRA BE LIABLE TO YOU OR TO ANY OTHER PERSON FOR DAMAGES FROM LOST PROFITS, LOSS OF GOODWILL, OR ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, OR DAMAGES FOR NEGLIGENCE OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR WORK STOPPAGE, LOSS OF DATA, COMPUTER FAILURE OR MALFUNCTION, OR FOR ANY OTHER DAMAGE OR LOSS. IN NO EVENT SHALL AVIRA BE LIABLE FOR ANY DAMAGES IN EXCESS OF THE LICENSE FEE PAID BY YOU EVEN IF AVIRA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING PROVISIONS OF SECTIONS 10 AND 11 SHALL APPLY WITH EQUAL FORCE TO ANY AUTHORIZED RESELLERS AND SHALL BE ENFORCEABLE TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW. 
+
+12. Privacy 
+
+By entering into this EULA, you agree that the Avira Privacy Policy, as it exists at any relevant time, shall be applicable to you. See www.avira.com. 
+
+13. Collection of Certain System Information 
+
+Avira uses certain applications and tools through its website and within the Software, to retrieve information about your computer system to assist Avira in support of the Software. With expanded online testing of files (feature Avira AntiVir ProActiv Community as of Version 10 of Avira paid products) Avira sends suspicious programs only (executable files) to its secure German data centers. Avira does not send any personal data. Files such as pdf, doc, xls as well other personal data, like pictures and videos are not being automatically sent. 
+
+14. [Intentionally left blank] 
+
+15. Governing Law and venue 
+
+Unless section 17 applies, this EULA shall be governed by the laws of the State of California and all actions under this Agreement shall be brought in the state and federal courts of California and you consent to venue and exclusive jurisdiction in those courts. 
+
+16. Miscellaneous 
+
+16.1. This EULA and the Terms and Conditions, as defined above and incorporated herein, set forth all of your rights to use the Software and make up the entire agreement between the parties. This EULA and the Terms and Conditions supersede any other communications, representations or advertising relating to the Software that is the subject of this EULA. 
+
+16.2. No provision hereof shall be deemed waived unless there is a written waiver signed by an authorized Avira representative. 
+
+16.3. If any provision of this EULA or the related Terms and Conditions is held invalid, the remainder of this EULA and Terms and Conditions shall continue in full force and effect. To the extent that an otherwise invalid provision can be construed so as to be valid, that provision shall be so construed. 
+
+16.4. All rights not expressly set forth hereunder are reserved by Avira. 
+
+16.5. The descriptive headings in this EULA have been inserted for convenience and shall not limit or otherwise affect the construction or interpretation of this EULA. 
+
+16.6. You may not assign your rights under this EULA without the express written permission of Avira. 
+
+17. Provisions for Licenses under German Law 
+
+This section applies to you if you are located in any other jurisdiction than the United States and Canada. Your license is governed by the laws of Germany. Should you be an Entrepreneur, the exclusive jurisdiction is the registered seat of Avira. Avira reserves the right to sue the Customer at its domicile. 
+
+17.1. Nothing in this EULA shall limit your right according to sections 69 c no. 3, 69 d para. 2 and 3 and 69 e of the German Copyright Act (UrhG). If you want to reverse engineer, decompile or disassemble the Software (hereinafter referred to as "Decompilation") for the purpose of achieving interoperability with other computer programs according to section 69 e UrhG, you shall contact Avira before Decompilation of the Software and request the provision of the respective information necessary for the achievement of such interoperability. If Avira supplies such information without undue delay, the Customer shall not be entitled to the De-compilation of the Software. 
+
+17.2. Section 10 (Limited warranty and disclaimer) shall be replaced in its entirety by the following provisions: 
+
+17.2.1. Unless expressly agreed otherwise, the Software provided by Avira shall be in line with the current-state-of-the-art technology and shall conform to all relevant product information and specifications provided by Avira, including those in the user handbooks. Avira does not warrant that the Software under the agreement will be fit for purposes beyond the fulfilment of Avira's obligations under the agreement. 
+
+17.2.2. You are advised that based on the current state of the art technology program errors cannot be excluded with complete certainty in spite of exercising greatest conscientious care and diligence and that it is not possible to develop Software that detects any existing virus or other Malware. 
+
+17.2.3. If you are an Entrepreneur and Avira has provided you with the Software against payment and in perpetuity, defects in the provided Software, shall be rectified by Avira, as follows, provided you have notified Avira of the respective defect in accordance with section 377 German Commercial Code (HGB): 
+
+17.2.3.1. Notified defects shall be rectified by Avira's choice through elimination of the defect ("repair") or provision of a defect -free Software ("substitute delivery"). Costs for such rectification shall be borne by Avira. 
+
+17.2.3.2. If the defects in the Software cannot be rectified within a reasonable period or if repair and substitute delivery can be deemed to have failed for other reasons, then you may, at your choice, reduce the Fee or - if the defects are not immaterial - rescind the agreement. 
+
+17.2.3.3. Any damage claims by you or claims for expenses incurred in vain ("Ersatz vergeblicher Aufwendungen") that arise from such defects shall be governed exclusively by section 10 (as set forth herein below under 17.3.). 
+
+17.2.4. If Avira has provided you with the Software against payment but for a limited period of time, defects in the Software, shall be rectified by Avira within a reasonable period after notification of the defect. The rectification of defects shall be effected, at Avira’s choice, by way of repair or substitute delivery free of charge. Your right to reduce the Fee for the time the defect persists remains unaffected. You are only entitled to an extraordinary termination of the agreement due to the failure to grant use in accordance with the agreement if Avira has been given sufficient opportunity to rectify the defect and such attempt has failed. 
+
+17.2.5. It shall be assumed that the repair or substitute delivery has failed only if Avira has been given sufficient opportunity to effect a repair or substitute delivery without achieving the desired result or if the repair or substitute delivery was unjustifiably refused by Avira. If rectification of a defect in the form of repair or subsequent delivery is only possible for Avira at unreasonable expenses, Avira may refuse to rectify the defect and refer you to your right to rescind or terminate the agreement. 
+
+17.2.6. In no event shall you be entitled to demand the source code for the Software in regard to any defects. 
+
+17.2.7. You shall notify Avira without undue delay if a third party asserts claims against you based on infringement of intellectual property rights by the Software ("Rechtsmangel"). Should there be any information of such, whether in written documents or correspondence or in other forms, you shall provide these to Avira without undue delay. In case of legitimate claims by third parties Avira will indemnify you of the costs that originate from the assertion of such third party's claims (including reasonable attorney fees, limited to the statutory remuneration of attorneys if applicable). Furthermore, Avira's liability for loss of profits due to such defects is limited to five times of the Fee amount, except where the defects were caused by intentional or gross negligent behaviour of Avira. 
+
+17.2.8. If you are an Entrepreneur and the Software of Avira has been provided in perpetuity, your warranty claims for defects of the Software lapse after one year from the statutory commencement of the limitation period, except in cases of intentional behaviour of Avira. The statutory limitation pursuant to section 479 of the German Civil Code (BGB) remains unaffected hereby. 
+
+17.3. Section 11 (Limitation of liability) shall be replaced in its entirety by the following provision: Notwithstanding the legal nature of the relevant claim, the following shall apply to your damage claims and claims for expenses incurred in vain ("Ersatz vergeblicher Aufwendungen"): 
+
+17.3.1. Avira shall be liable for any of your damages resulting from gross negligent or intentional behaviour of Avira, which are due to culpable injury to life, body and health, which arise due to the assumption of a guarantee or according to the Product Liability Act. In all other cases Avira's liability for damages is limited to the infringement of material obligations of the agreement. Material obligations are only such obligations which fulfillments allow the proper execution of the agreement in the first place and where you may rely on the compliance with these obligations. Avira's liability for the loss of data is limited to the typical expenditures required for the restoration thereof, which are normal and typical if security copies have been made. Reference is made to your obligation for regular data-backups according to section 5 of this EULA. 
+
+17.3.2. Avira's liability in case of negligent infringement of material obligations of the agreement by Avira shall be limited to foreseeable damages which are typical for this type of contract. 
+
+17.3.3. A strict liability of Avira for defects existing at the time of entering into this EULA pursuant to section 536 a para. 1, alternative 1 German Civil Code (BGB) is hereby expressly excluded. 
+
+17.3.4. The foregoing limitations of liability also apply with regard to all Avira's representatives, including but not limited to its directors, legal representatives, employees and other vicarious agents. 
+
+Avira, Inc. | 425 Market Street | San Francisco CA 94105 | United States of America 
+
+Avira Operations GmbH & Co. KG | Kaplaneiweg 1 | 88069 Tettnang | Germany 
+
+November 4, 2011 
+

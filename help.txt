@@ -1,0 +1,85 @@
+Avira / Windows Version 1.9.161.2
+Copyright (c) 2010 by Avira GmbH
+All rights reserved.
+
+Usage: scancl [options] [path_to_scan...]
+  --alldrives ............  scan all drives
+  --allhard ..............  scan all hard disks
+  --allremote ............  scan all network drives
+  --dmse .................  set exit code to 101 if any macro is found
+  --nombr ................  do not check any master boot records
+  --allboot ..............  scan all boot records
+  --boot=str .............  scan  boot record of given drive
+  --fixallboot ...........  fix all boot records
+  --fixboot=str ..........  fix boot record of given drive
+  /x, --smartextensions ..  applies smart scan method (default)
+  /e, --extensionlist ....  applies extlist scan method
+  /a, --allfiles .........  scan all files
+  --exclude=str ..........  exclude files or directories from scan
+  --showall ..............  show all scanned files (default: show infected/suspicious only)
+  /z, --scaninarchive ....  scan inside archives (default - not scanning inside archives)
+  --noarchive ............  do not scan inside archives (default)
+  /n, --norecursion ......  do not scan subdirectories (default - scan subdirectories)
+  /s, --recursion ........  scan subdirectories (default)
+  --withtype=str .........  detect other (non-virus but unwanted) software too (type maybe: dial,joke,game,bdc,pck,spr,adspy,appl,phish,hiddenext,adware,pfs,all - detect all types (no spaces allowed between types)) the following types are enabled by default: dial,adspy,adware,bdc,hiddenext,phish. You have to specify all the types you want to detect.
+  --withouttype=str ......  like -withtype, but disables these types. Detect all types except the ones specified.
+  --lang=str .............  language (en, only english language is supported)
+  /m, --scanmbox .........  scan mailbox (warning: may be time consuming)
+  --heurlevel=N ..........  heuristic level (0 - off, 1 - low, 2 - medium, 3 - high, default - 0)
+  --archivemaxsize=str ...  archive maximum uncompressed size in bytes (0 - no size restriction, default - 1GB, maximum accepted limit - 4GB)
+  --archivemaxrecursion=N   archive maximum recursion level (0 - unlimited recursion, default - 10)
+  --archivemaxratio=N ....  archive maximum compression ratio (0 - unlimited, default - 250)
+
+Scan patterns : 
+  --nolinks ..............  do not follow symbolic links (default - follow symbolic links)
+  --onefs ................  scan only the filesystem of the given path. If the path contains other mounted filesystems then these will not be scanned(default - scan all filesystems under the given path).
+  /d, --subdirmaxlevel=N    subdirectories maximum recursion level (0 - no recursion, default - unlimited)
+
+Scan actions : 
+  --defaultaction=str ....  action for infected files (ask, clean, move, rename, delete (other), delete-archive (for ZIP, ARJ, RAR, etc.), delete-mailbox (for Mailboxes mbox, Thunderbird, Mozilla, etc.), disarm (make the locked file ineffective), ignore, default - ignore)
+  --suspiciousaction=str    action for suspicious files (ask, clean, move, rename, delete (other), delete-archive (for ZIP, ARJ, RAR, etc.), delete-mailbox (for Mailboxes mbox, Thunderbird, Mozilla, etc.), disarm (make the locked file ineffective), ignore, default - ignore)
+  --renameext=str ........  extension appended to renamed files
+
+Scan output : 
+  --verboselog ...........  verbose log mode
+  --colors ...............  display color messages (default - not colored messages)
+  --nocolors .............  do not display color messages (default)
+  /q, --quiet ............  no information are displayed
+  --stats ................  display detailed scan statistics at the end of scanning (default)
+  --nostats ..............  do not display scan statistics
+  /l, --log=str ..........  log file (default - log to stdout)
+  --logappend ............  append to log file (default - truncate log file)
+  --logformat=str ........  available options are regular,singleline (default regular)
+
+General options : 
+  /c, --config=str .......  use configuration file (default - configuration file scancl.conf will be  used (if found))
+  --quarantine=str .......  quarantine directory (default - $(bindir)/quarantine)
+  /t, --temp=str .........  directory for temporary files (default - system temporary directory)
+  --workingdir=str .......  install directory
+
+Information options : 
+  /i, --info .............  display list of known viruses
+  /v, --version ..........  display version and license information
+  /h, --help .............  display this help message
+  --listtypes ............  display malware types (dial, game, joke etc.)
+  /? .....................  display this help message
+
+List of return codes :
+     0: Normal program termination, nothing found, no error
+     1: Found concerning file(s) or boot sector(s)
+     2: A signature was found in memory
+     3: Suspicious file(s) found
+   100: Avira only has displayed this help text
+   101: A macro was found in a document file
+Abort error codes:
+   203: Invalid option
+   204: Invalid (nonexistent) directory given at command line
+   205: The log file could not be created
+   210: Avira could not find a necessary library file
+   211: Program aborted because the self check failed
+   212: Virus definition file(s) could not be read
+   213: An error occurred during initialization (engine and VDF versions incompatible)
+   214: No valid license found
+   215: Scancl self test failed
+   216: File access denied (no permissions)
+   217: Directory access denied (no permissions)

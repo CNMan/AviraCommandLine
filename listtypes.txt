@@ -1,0 +1,37 @@
+Avira / Windows Version 1.9.161.2
+Copyright (c) 2010 by Avira GmbH
+All rights reserved.
+
+engine set:         8.3.56.6
+VDF Version:        8.16.38.190 
+
+key file:           E:\GitHub\AviraCommandLine\hbedv.key
+registered user:    aqaba 
+serial number:      borkan
+key expires:        E 22 2099
+
+
+DIAL (Dialer)                                  - Dialer program for chargeable numbers. If used the user can incur high costs.
+
+ADSPY (Adware/spyware)                         - Software that displays advertising or software that sends the user's personal data to a third party, often without their knowledge or consent, and for this reason may be unwanted.
+
+ADWARE (Adware)                                - This software or components installed by it will display advertisements on your system.
+
+APPL (Application)                             - The designation applications refers to an application that may pose a risk if used or that is from a suspicious source.
+
+BDC (Back-door client)                         - This is the control software for spyware. Control software for spyware is generally not harmful.
+
+GAME (Games)                                   - These are computer games. Games do not normally cause any damage on your computer.
+
+HIDDENEXT (Double-extension files)             - The file contains an executable program that is disguised by a harmless file extension.
+
+JOKE (Jokes)                                   - Joke programs do not normally cause any damage on your computer, but they can unsettle the user.
+
+PCK (Unusual runtime compression)              - This file has been compressed using unusual runtime compression. Please ensure that this file originates from a reliable source.
+
+PFS (Fraudulent software)                      - The designation 'fake software' indicates software that usually comes at a charge but that contains no functions or that installs dubious components.
+
+PHISH (Phishing)                               - Fraudulent emails designed to cause the victim to reveal confidential information, such as user names, passwords or online banking data, on certain websites.
+
+SPR (Programs that violate the private domain) - This is a program that may be capable of compromising the security of your system, triggering malware activities or invading your privacy.
+
