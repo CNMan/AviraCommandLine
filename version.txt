@@ -4,10 +4,10 @@ All rights reserved.
 
 operating system:   Windows
 architecture:       ia32
-system date:        T 08 2020
+system date:        T 12 2020
 scancl Version:     1.9.161.2 
 core Version:       1.9.2.0 
-VDF Version:        8.16.39.116 
+VDF Version:        8.16.39.202 
 
 product:            scancl
 key file:           E:\GitHub\AviraCommandLine\hbedv.key
@@ -15,7 +15,7 @@ registered user:    aqaba
 serial number:      borkan
 key expires:        E 22 2099
 
-engine set:         8.3.56.10
+engine set:         8.3.56.12
 avbb:               8.1.3.4
 avcore:             8.3.20.6
 avcrypto:           8.2.1.4
@@ -24,13 +24,13 @@ avemu:              8.1.3.12
 avexp:              8.4.6.0
 avgen:              8.1.8.356
 avhelp:             8.3.6.2
-avheur:             8.1.8.22
+avheur:             8.1.8.24
 avlibinf:           8.2.1.8
 avmobile:           8.1.22.0
 avoffice:           8.4.11.6
-avpack:             8.5.0.38
+avpack:             8.5.0.40
 avrdl:              8.2.3.28
 avsbx:              8.2.22.24
 avscn:              8.3.9.0
-avscript:           8.3.7.240
+avscript:           8.3.7.242
 avvdf:              8.3.3.8
