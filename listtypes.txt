@@ -2,8 +2,8 @@ Avira / Windows Version 1.9.161.2
 Copyright (c) 2010 by Avira GmbH
 All rights reserved.
 
-engine set:         8.3.62.32
-VDF Version:        8.18.7.110 
+engine set:         8.3.62.54
+VDF Version:        8.18.10.192 
 
 key file:           E:\GitHub\AviraCommandLine\hbedv.key
 registered user:    aqaba 
