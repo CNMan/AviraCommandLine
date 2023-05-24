@@ -1,0 +1,64 @@
+Usage: savapi [options]
+
+Options: 
+  /N ....................  SAVAPI will run as a process.(Default: not activated, SAVAPI will run as a service)
+  --pool-scanners=str ...  SAVAPI will start with a predefined number of workers. (Default: 24 workers)
+  /C, --config=str ......  Specifies the configuration file location. (Default: there is no configuration file used. SAVAPI will start with the defaults specified in documentation.)
+  --temp=str ............  Specifies the  scanning and unpacking temporary files location. (Default: %temp%)
+  --key-file=str ........  Specifies the path to the Avira license key file. (Default: <SAVAPI service binary directory>/HBEDV.KEY or <SAVAPI service binary directory>/hbedv.key)
+  --vdf-dir=str .........  Specifies the VDF components location. (Default: the main SAVAPI service binary location)
+  --ave-dir=str .........  Specifies the engine components location. (Default: the main SAVAPI service binary location)
+  --log-file=str ........  Specifies the log file location and name. (Default: not activated, there is no log file created)
+  --ldpath=str ..........  Specifies the SAVAPI libraries path. (Default: the main SAVAPI service binary location)
+  --fops-lib=str ........  Specifies the SAVAPI external fops library path. (Default: internal Savapi fops implementation will be used)
+  --fops-lib-params=str    Specifies the SAVAPI external fops library blank separated parameters. (Default: No parameters will be sent to the SAVAPI external fops library)
+  --install .............  installs the service in Service Control Manager (description, display name, binary image path, Autostart)
+  --uninstall ...........  removes the service from the Service Control Manager
+  --tcp=str .............  SAVAPI will bind on the specified interface. If no host is given SAVAPI will bind to localhost. 
+  --pool-connections=str   Specifies the pending connections queue length. (Default: 48)
+  --modules-dir=str .....  Specifies the directory where the modules files are duplicated. (Default: value of 'temporary directory' option)
+  --duplicate-modules ...  SAVAPI will duplicate the engine files in order to allow further reload engine operations (See --reload-engine for more details). (Default: disabled)
+  --apc-mode=str ........  SAVAPI can use APC to scan files besides the local engine. Available options are: disabled, check-only (only file hashes will be sent to APC), full (all APC functionality is used). auto (will try to activate full mode if possible, otherwise it will default to disabled)(Default: auto)
+  --apc-cert-dir=str ....  Specifies the certificate directory path. (Default: the main SAVAPI service binary location)
+
+Commands: 
+  --status ..............  Retrieves the current status of SAVAPI. This will work only if you specify the running SAVAPI interface either by command line options (--tcp or --socket-file) or by configuration file (--config=<configuration_file>).  If no interface is specified, SAVAPI will use the default interface. Note that the status command will not be executed if the user that sends the command does not have enough privileges  (this means that the user that sends the command does not have enough privileges to connect to the SAVAPI  service).
+  --reload-engine .......  Reloads the engine modules of SAVAPI. This will work only if you specify the running SAVAPI interface either by command line options (--tcp or --socket-file) or by configuration file (--config=<configuration_file>).  If no interface is specified, SAVAPI will use the default interface. Note that the reload-engine command will not be executed if the user that sends the command does not have enough privileges  (this means that the user that sends the command does not have enough privileges to connect to the SAVAPI  service). Note that the command will work only if the running SAVAPI service was started with 'duplicate-modules' option enabled.
+
+Information: 
+  /V, --version .........  Displays version information
+  /h, --help ............  Displays this help message
+  /? ....................  Displays this help message
+
+List of return codes:
+     0: Normal program termination, no error
+   100: Daemon has only displayed this help text
+   101: Daemon has only displayed the version info
+Abort codes:
+   200: Program aborted, not enough memory available
+   201: Program aborted, invalid parameter
+   202: Program aborted, daemon not/already initialized
+   203: Program aborted, conversion error
+   204: Error parsing the command line arguments
+   205: Error parsing the configuration file
+   206: Invalid port specified (Obsolete, not used anymore)
+   207: Invalid ip specified (Obsolete, not used anymore)
+   208: Cannot start on specified interface(invalid ip/port)
+   209: Error on loading vdf files
+   210: Problem when trying to start the engine
+   211: Program aborted because the self check failed
+   212: No valid license found
+   213: Error when trying to start/stop the SAVAPI service
+   214: Program aborted because GET command failed
+   215: Program aborted because SET command failed
+   216: Error when trying to open/read/write a file 
+   217: Error when trying to set uid/gid
+   218: SAVAPI service timeout
+   219: SAVAPI service not running
+   220: Failed to stop SAVAPI service
+   221: Error when trying to install an already installed SAVAPI service
+   222: Error when trying to uninstall an already uninstalled SAVAPI service
+   223: Error when trying to execute report command
+   224: Plugin(s) related error
+   225: APC random id is invalid, not accessible or not computable
+   250: General daemon failure (specific information not available)

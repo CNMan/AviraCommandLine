@@ -1,0 +1,89 @@
+Usage: avupdate [options]
+
+Info :  The parameter names are not case sensitive.
+
+Command Line :
+  /c, --config=str ...........  Config file
+  --no-config ................  No configuration file
+  /q, --quiet ................  If is present, the updater will not log messages on screen
+  /v, --version ..............  Display version
+  /h, --help .................  Display help
+
+General :
+  /l, --log=str ..............  Log file
+  --log-append ...............  Append to log file
+  --log-rotate ...............  Rotate the log files
+  --log-template=str .........  Log template
+  --log-file-size=N ..........  Maximum size in bytes for a log file
+  --show-progress ............  Show download progress
+  --product-name-file=str ....  Product-name file. Contains the product name that will be present in the user-agent string. Default value: productname.dat
+
+Update :
+  /m, --mirror ...............  Mirror mode
+  /i, --install-dir=str ......  Install dir
+  /t, --temp-dir=str .........  Temp directory
+  /b, --backup-dir=str .......  Backup dir
+  --update-dir=str ...........  Update dir
+  --cache-dir=str ............  Cache dir for internal usage
+  --key-dir=str ..............  Key directory
+  --master-file=str ..........  Master idx
+  --local-master-file=str ....  Full path to a local master file to be used instead the one from the install directory
+  --skip-master-file .........  Skip master file
+  --add-var-pair=str .........  Add a variable defined in the info file
+  --module-install-path=str ..  Add a module install path
+  --peak-handling-srvs=str ...  Peak handling update servers
+  --ipv4-peak-server-limit=N    Ipv4 peak server limit (ignored when --no-dns-resolve is activated)
+  --ipv6-peak-server-limit=N    Ipv6 peak server limit (ignored when --no-dns-resolve is activated)
+  --internet-protocol=str ....  Internet protocol: auto, ipv4, ipv6
+  --depend ...................  If is present, the updater will use the old depend functionality
+  --ext-program-timeout=N ....  Extern program timeout
+  --skip-selfupdate ..........  Skip installing updater files
+  --no-deltaupdate ...........  Do not use delta update. Obsolete, this option is ignored
+  --no-signature-check .......  Do not check if the downloaded files are signed
+  --signature-info-check .....  Check if the info files are signed with Avira signature
+  --signature-info-ssl-check    Check if the info files are signed with OpenSSL signature (option valid only on Linux and macOS platforms)
+  --check-if-update-available   Check if update available
+  --update-modules-list=str ..  Update modules list
+  --ignore-srvs-list .........  Ignore servers list
+  --force-update .............  Bring all modules to the same state as they are on the update server
+  --xvdf-always-merge ........  Merge xVDF files even if no files were updated
+
+Internet update :
+  --internet-srvs=str ........  Internet update servers (for local directories, only absolute paths are accepted)
+  --product-file=str .........  Product file
+  --cert-path=str ............  Depending on the value of '--cert-verify-policy': 'auto' or 'ca-pinning' => list of CA bundle paths separated by ';'; 'pubkey-pinning' => list of certificate paths or "sha256//..." entries separated by ';'
+  --crl-path=str .............  Path to Certificate Revocation List file used for certificate validation when authenticating https update servers (ignored when --cert-path not specified)
+  --no-host-check ............  Don't verify the hostname of the update server against the certificate's name
+  --cert-verify-policy=str ...  Policy by which the server certificate is verified: auto (same behaviour as 'ca-pinning'), ca-pinning (certificate bundle only, specified in '--cert-path'), pubkey-pinning (certificate paths or the SHA256 hashes in base64 of the certificates' public keys, specified in '--cert-path'). Default value: auto. Ignored when --cert-path not specified
+  --no-cert-verify ...........  Disable the HTTPS server certificate validation. Warning: This makes the communication insecure!
+
+Network :
+  --user-agent=str ...........  User agent
+  --system-proxy .............  Use proxy from system
+  --proxy-host=str ...........  Proxy server
+  --proxy-port=N .............  Proxy port
+  --proxy-username=str .......  Proxy username
+  --proxy-password=str .......  Proxy password
+  --username=str .............  Username
+  --password=str .............  Password
+  --update-auth-type=str .....  Authentication type: basic, digest, ntlm, any
+  --retries=N ................  Number of retries
+  --retry-timeout=N ..........  Timeout between retries
+  --connect-timeout=N ........  Timeout for connect
+  --receive-timeout=N ........  Timeout for receiving data
+  --no-dns-resolve ...........  Don't perform DNS resolving for the update servers
+
+Smtp :
+  --smtp-server=str ..........  Smtp server
+  --smtp-port=N ..............  Smtp port
+  --smtp-user=str ............  Smtp user
+  --smtp-password=str ........  Smtp password
+  --mailer=str ...............  Mailer: smtp, sendmail
+  --sendmail-path=str ........  Absolute and secured path of a valid 'sendmail' binary
+  --sendmail-arguments=str ...  Sendmail arguments
+  --smtp-timeout=N ...........  Smtp timeout
+  --notify-when=N ............  Notify when: 0 = never, 1 = at every update, 2 = only for unsuccessful updates, 3 = only for successful updates
+  --auth-method ..............  Authentication method
+  --email-to=str .............  Receiver of the notification emails
+  --email-from=str ...........  Sender of the notification emails
+  --email-footer=str .........  Email Footer

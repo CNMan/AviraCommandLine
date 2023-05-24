@@ -1,0 +1,999 @@
+# SAVAPI Service configuration file
+#
+# Notes:
+# - lines starting with '#' and empty lines are ignored when options are parsed
+# - for a more detailed options description check the SAVAPI documentation
+#   SAVAPI-documentation.pdf chapter 3.3.2 SAVAPI configuration file options.
+# - the default values are provided for all the options where such a value exists
+# - the SAVAPI Service will not start if invalid values are provided for any
+#   of the configuration file options. An error will be printed regarding the
+#   invalid value.
+# - all numeric values will be treated as decimal (base 10).
+#
+# System hard-limit:
+# ~~~~~~~~~~~~~~~~~~
+# on UNIX, SAVAPI uses the system hard-limit (see ulimit -Hn) for the maximum
+# opened files allowed by the process. This limit is shared between SAVAPI
+# connections (the higher the archives' recursion level, more opened files will
+# be used). When using large values for options: PoolScanners, PoolConnections and
+# ArchiveMaxRec unexpected errors (scanning proc-errors, failed connections) may
+# occur if the system hard-limit is too small.
+#
+
+# =============================================================================
+# SAVAPI Service running options:
+# =============================================================================
+
+# CurrentWorkingDirectory </path/to/working/folder>
+#
+# Sets the current working directory for SAVAPI. This eliminates the need to
+# specify full paths in file names when commands that accept file names as parameters
+# are used.
+#
+# Available values: only absolute paths are accepted; relative paths will not be
+# accepted and the service will exit with an error.
+#
+# Default value: the SAVAPI Service binary location.
+
+# TextMode <ASCII-PRINT | LOCALE | UTF-8>
+#
+# Specifies the method used for characters encoding. The SAVAPI protocol provides
+# three modes for handling text. Modes are applied to both incoming and outgoing data.
+#
+# Available values:
+#  - ASCII-PRINT
+#    Only printable characters of the ASCII set are considered valid characters.
+#    These include the characters 9 and 32-126. All other character values are
+#    converted to '?' (63). This is a conservative setting for clients that want
+#    to keep communication restricted to 7-bit printable text.
+#  - LOCALE
+#    All characters will be handled "as-is". It is the responsibility of the client
+#    to ensure that the SAVAPI Service will be able to correctly interpret the
+#    text (for example, with matching locale settings between client, service and
+#    file system). 0-value characters will not be handled correctly in this mode.
+#    Encodings such as UTF-16LE or UTF-32LE are not supported by the SAVAPI TCP/IP
+#    protocol.
+#  - UTF-8
+#    All text must be correctly encoded as UTF-8. Invalid encodings will result in
+#    error responses.
+#
+# Default value: LOCALE.
+#
+# Note: If invalid text is received, the SAVAPI Service will output an error
+# (whenever this is possible) or drop the connection.
+
+# PoolScanners <no_of_workers>
+#
+# Specifies the SAVAPI workers number. SAVAPI will start with the specified
+# number of workers. SAVAPI will not accept an infinite number of scanners.
+# The maximum accepted number is 300.
+#
+# Available values: 1 - 300
+#
+# Default value: 24
+
+# PoolConnections <no_of_pool_connections>
+#
+# Specifies the pending connections queue length. SAVAPI will not accept an
+# infinite number of pending connections. The maximum accepted number is 900.
+#
+# Available values: 1 - 900
+#
+# Default value: 48
+#
+# Note: Since it makes no sense to have more available workers than accepted
+# connections, if the number of PoolConnections is lower than PoolScanners,
+# the value received from PoolScanners will be used for both options.
+
+# User <user>
+#
+# Specifies the SAVAPI Service credentials.
+# SAVAPI Service will start and, as soon a possible, will drop its credentials
+# to the specified user.
+#
+# Available values: user name.
+#
+# Default value: there is no default value for this option. The service will run
+# with the user and group it was started with (if nothing is specified in the
+# configuration file).
+#
+# Note: This option is available only on Unix systems.
+
+# Group <group>
+#
+# Specifies the SAVAPI Service credentials.
+# SAVAPI Service will start and, as soon a possible, will drop its credentials to
+# the specified group.
+#
+# Available values: group name.
+#
+# Default value: there is no default value for this options. The service will run
+# with the user and group it was started with (if nothing is specified in the
+# configuration file).
+#
+# Note: This option is available only on Unix systems.
+
+# PidDir </path/to/the/pid/dir>
+#
+# Specifies the SAVAPI Service PID file location.
+#
+# Available values: only absolute paths are accepted; relative paths will not be
+# accepted and the service will exit with an error.
+#
+# Default value: /var/tmp.
+#
+# Note: This option is available only for Unix systems.
+
+# KeyFile </path/to/the/key/file>
+#
+# Specifies SAVAPI license key file location.
+#
+# Available values: only absolute paths are accepted; relative paths will not be
+# accepted and the service will exit with an error.
+#
+# Default value: file HBEDV.KEY or hbedv.key in the SAVAPI Service folder (the
+# location where the SAVAPI Service binary resides).
+
+# AveDir </path/to/the/ave/dir>
+#
+# Specifies the location of the engine files.
+#
+# Available values: only absolute paths are accepted; relative paths will not be
+# accepted and the service will exit with an error.
+#
+# Default value: the SAVAPI Service folder (the location where the SAVAPI
+# Service binary resides).
+
+# VdfDir </path/to/the/vdf/dir>
+#
+# Specifies the location of the VDF files.
+#
+# Available values: only absolute paths are accepted; relative paths will not be
+# accepted and the service will exit with an error.
+#
+# Default value: the SAVAPI Service folder (the location where the SAVAPI
+# Service binary resides).
+
+# ModulesDir </path/to/the/modules/dir>
+#
+# Specifies the directory where SAVAPI will store the files needed for non-
+# disruptive service update.
+#
+# Available values: only absolute paths are accepted; relative paths will not be
+# accepted and the service will exit with an error.
+#
+# Default value: the value of ScanTemp option
+#
+# Note: This option is ignored if DuplicateModules option is not enabled
+
+# FopsLib </path/to/fops/library>
+#
+# Specifies the location of SAVAPI's fops plugin library.
+#
+# Available values: only absolute paths are accepted; relative paths will not be
+# accepted and the service will exit with an error.
+#
+# Default value: internal Savapi fops implementation will be used.
+
+# FopsLibParams "<blank separated list of parameters>"
+#
+# Specifies the SAVAPI's external fops library blank separated parameters.
+#
+# Available values: a list of parameters separated by blank spaces
+#
+# Default value: No parameters will be sent to the SAVAPI external fops library.
+
+# DuplicateModules <0|1>
+#
+# Activates the duplication of modules files in order to perform reload-engine command(s).
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0.
+
+# AttachToGuard <0|1>
+#
+# Commands the SAVAPI Service to attach to Guard service.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 1 (enabled).
+#
+# Note: This option is available only on Windows systems.
+
+# SocketPermissions <mode>
+#
+# Specifies the permissions for the UNIX local socket.
+#
+# Available values: mode permissions
+#
+# Default: Socket file is created with the same user/group as the running SAVAPI
+# Service and with mode=0600.
+
+# CreateSocketDir <value>
+#
+# If this option is enabled SAVAPI Service will create at startup the parent directory
+# of the socket file if it does not exist.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0 (disabled).
+#
+# Note: This option is not available on Windows systems.
+
+# =============================================================================
+# Connection related options
+# =============================================================================
+
+# ListenAddress <inet:port[@host]> - for TCP connections
+# ListenAddress <unix:/path/to/AF_UNIX/socket> - for Unix local sockets connections
+# Specifies the SAVAPI Service listening interface.
+# inet host can be either a host name or an IP address, in any accepted format (dotted or not):
+# decimal, hexadecimal, octal.
+#
+# Available values: listening interface location.
+# Examples:
+#  - Bind to TCP port 9999 on local host:
+#    ListenAddress=inet:9999
+#  - Bind to TCP port 9999 on loop back interface:
+#    ListenAddress=inet:9999@127.0.0.1
+#  - Bind to TCP port 9999 on public interface):
+#    ListenAddress=inet:9999@testcomputer
+#  - Bind to UNIX local socket "/var/tmp/.savapi":
+#    ListenAddress=unix:/var/tmp/.savapi
+#
+# Default value: '/var/tmp/.savapi' on Unix. There is no default value on Windows.
+
+# ConnectionTimeout <value-in-sec>
+#
+# Specifies the worker connection time out in seconds. A value of 0 means no time out.
+#
+# Available values: 0 - INT32_MAX.
+#
+# Default value: 60.
+#
+# Note: Available only in daemon/service mode.
+
+# Proxy <proxy-server>
+#
+# Specifies the connection proxy server
+#
+# Available values: Valid http/https/socks proxy server.
+# Examples
+#    Proxy=10.0.0.1:3128
+#    Proxy=http://proxy-server:3128
+#    Proxy=socks4://socks-proxy-server
+#    Proxy=http://username:password@proxy-server:3128
+#
+# Default value: none
+#
+# Notes:
+#  - To specify a port number in this string, append :[port] to the end of the host name.
+#    If not specified, SAVAPI will use the port 1080 as default.
+#  - The proxy string may be prefixed with [scheme]:// to specify the kind of proxy to be used.
+#    Supported schemes are: http://, https://, socks4://, socks4a:// and socks5://.
+#  - If no protocol is specified, the proxy will be treated as a HTTP proxy server.
+#  - If the proxy requires authentication, the credentials can be specified by adding username:password before the host name,
+#    as shown in one of the examples above.
+#  - If no proxy is provided, SAVAPI will try to read it from other sources:
+#    environment variables in the following order: https_proxy, HTTPS_PROXY, http_proxy, HTTP_PROXY, all_proxy, ALL_PROXY.
+#  - If no proxy is found in any of the sources mentioned above, SAVAPI will use a direct connection
+
+# ProtocolStrict <0|1>
+#
+# If set, SAVAPI closes the connection for unknown protocol commands, otherwise the connection is kept open
+# whilst the unknown commands are discarded.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 1.
+#
+# Note: It is strongly recommended not to disable this option in order to mitigate against
+#       Cross-site request forgery attacks.
+
+# =============================================================================
+# Scan related options
+# =============================================================================
+
+# ScanTemp </path/to/temporary/folder>
+#
+# Sets the temporary folder used for scan related operations. SAVAPI may also
+# use other temporary folders for non scan related operations.
+#
+# It is recommended for the location to not be a folder that contains sensitive files,
+# such as SAVAPI binaries or configuration files.
+#
+# Available values: only absolute paths are accepted; relative paths will not
+# be accepted and the service will exit with an error.
+#
+# Default value: default Operating System temporary folder.
+
+# ArchiveScan <value>
+#
+# Activates archive detection and scanning.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0.
+
+# ArchiveMaxSize <size>
+#
+# Sets the maximum allowed size for any file within an archive, mailbox or mail.
+#
+# Available values: file size up to INT64_MAX bytes.
+#
+# Default value: 1073741824
+#
+# Notes:
+#  - A value of "0" means the maximum allowed value (INT64_MAX bytes).
+#  - A size can include K, M, or G as a label. Otherwise the number is assumed
+#    to be in bytes. Examples include "100M" or "32K".
+#  - 1K = 1024 bytes. 1M = 1024^2 bytes. 1G = 1024^3 bytes.
+#  - This setting is ignored if all three ARCHIVE_SCAN, MAILBOX_SCAN and MIME_SCAN are disabled.
+
+# ArchiveMaxRec <recursion-level>
+#
+# Sets the maximum allowed recursion within an archive, mailbox or mail.
+#
+# Available values: 0 - 1000.
+#
+# Default value: 200.
+#
+# Notes:
+#  - This option is limited to 1000 recursion levels.
+#  - A value of "0" means the maximum allowed value (1000 recursion levels).
+#  - This setting is ignored if all three ARCHIVE_SCAN, MAILBOX_SCAN and MIME_SCAN are disabled.
+
+# ArchiveMaxRatio <expansion-factor>
+#
+# Sets the maximum allowed decompressing-ratio within an archive, mailbox or mail.
+#
+# Available values: 0 - INT32_MAX.
+#
+# Default value: 150.
+#
+# Notes:
+#  - A value of "0" means the maximum allowed value (INT32_MAX).
+#  - This setting is ignored if all three ARCHIVE_SCAN, MAILBOX_SCAN and MIME_SCAN are disabled.
+
+# ArchiveMaxCount <count>
+#
+# Sets the maximum allowed number of files within an archive, mailbox or mail.
+#
+# Available values: 0 - INT64_MAX
+#
+# Default value: 0
+#
+# Notes:
+#  - A value of "0" means the maximum allowed value (INT64_MAX).
+#  - This setting is ignored if all three ARCHIVE_SCAN, MAILBOX_SCAN and MIME_SCAN are disabled.
+
+# MailboxScan <0|1>
+#
+# Activates detection and scanning of mailboxes.
+#
+# Available values: 0 (disabled) or 1 (enabled)
+#
+# Default value: 0
+# Notes:
+#  - Mails from mailboxes are scanned even if MIME_SCAN is disabled.
+
+
+# MimeScan <0|1>
+#
+# Activates detection and scanning of mails.
+#
+# Available values: 0 (disabled) or 1 (enabled)
+#
+# Default value: 1
+
+
+# HeurMacro <0|1>
+#
+# Activates heuristic macro detection.
+#
+# Available values: 0 (disabled) or 1 (enabled)
+#
+# Default value: 1
+
+# HeurLevel <0-x>
+#
+# Sets the heuristic level for the engine. The existing levels are:
+# 0 - disable heuristic detection
+# 1 - lazy heuristic detection (this is the lowest possible mode. Detection
+#     is not very good, but the false positives number will be low)
+# 2 - normal heuristic detection (this is the 'normal' heuristic detection)
+# 3 - high heuristic detection (this is the highest possible mode, but the false
+#     positives number will be high)
+#
+# Available values: 0, 1, 2 or 3
+#
+# Default value: 2
+
+# DetectAdspy <0|1>
+#
+# Activates detection for software that displays advertising pop-ups or sends
+# user specific data to third parties without the user's consent and might
+# therefore be unwanted.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 1.
+
+# DetectAdware <0|1>
+#
+# Activates the detection of software that presents banner ads or pop-up windows
+# through a bar that appears on a computer screen.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 1.
+
+# DetectAppl <0|1>
+#
+# Activates detection for applications of dubious origin or which might be
+# hazardous to use.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0.
+
+# DetectBdc <0|1>
+#
+# Activates detection for Backdoor-Client programs. Such programs are used to spy
+# out or change data on a computer.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 1.
+
+# DetectDial <0|1>
+#
+# Activates detection for Dial-Up programs that charge for a connection fee.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 1.
+
+# DetectGame <0|1>
+#
+# Activates game detection.
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0
+
+# DetectHiddenExt <0|1>
+#
+# Activates the hidden file extension detection. The detected file contains an
+# executable. This, however, is disguised by a harmless file extension.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 1.
+
+# DetectJoke <0|1>
+#
+# Activates joke programs detection.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0
+
+# DetectPfs <0|1>
+#
+# Activates the detection of fraudulent software, also known as "scareware" or
+# "rogueware" that pretends that your computer is infected by viruses or malware.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 1.
+
+# DetectPhish <0|1>
+#
+# Activates Phising detection.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 1.
+
+# DetectSpr <0|1>
+#
+# Activates Security Privacy Risk detection. This denotes a program that might
+# be able to affect the security of your system, might trigger activities you
+# might not want or might violate your privacy.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0.
+
+# DetectPua <0|1>
+#
+# Activates the detection of possible unwanted applications.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 1.
+
+# DetectAllTypes <0|1>
+#
+# Activates/deactivates all detection types: DetectAdspy, DetectAppl, DetectBdc,
+# DetectDial, DetectGame, DetectHiddenExt, DetectJoke, DetectPhish, DetectSpr.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: there is no default value for this option
+#
+# Note: If DetectAlltypes is in the file it will overwrite all the other types.
+
+# ScanTimeout <time-in-seconds>
+#
+# Sets the maximum number of seconds allowed to scan a file before aborting.
+#
+# Available values: 0 - 86400
+#
+# Default value: 0 (disabled).
+
+# Repair <0|1>
+#
+# Activates infected files repairing. The actual repairing occurs during the
+# "SCAN" request.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0.
+
+# SavapiNotifyRepair <0|1>
+#
+# Activates notification for a repairable infected file.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0.
+
+# SavapiNotifyOffice <0|1>
+#
+# Activates Microsoft Office OLE documents detection.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0.
+
+# SavapiNotifyOfficeMacro <0|1>
+#
+# Activates Microsoft Office OLE documents macros detection.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0
+
+# SavapiNotifyOfficeMacroAutostart <0|1>
+#
+# Activates Microsoft Office OLE documents macros with autostart detection.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0
+
+# SavapiNotifyAlertURL <0|1>
+#
+# Activates notification with the AVIRA virus description URL.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0
+#
+# Note: This option does not display the alert URLs when the file is detected as malware by APC.
+
+# AlertURL <alert_url>
+#
+# Specifies the AVIRA virus description URL.
+#
+# Available values: virus description URL. The URL must contain the string "?q=%1" for validation purposes.
+# If it contains the '%1' keyword, the virus name will be passed through it.
+#
+# Default value: http://www.avira.com/en/threats?q=%1
+
+# ScanMode <SMART | ALL | EXTLIST>
+#
+# Sets the scanning method.
+#
+# Available values:
+#  - SMART
+#    Smart scan mode.
+#    The files scanned for malware are chosen by SAVAPI.
+#    The choice is made based on the files content. This is the recommended setting.
+#  - ALL
+#    All scan mode.
+#    Files are scanned for malware, no matter their content or extension.
+#  - EXTLIST
+#    Extensions List scan mode.
+#    Only files provided by the user, that match a list of specific extensions, are scanned for
+#    malware content. Files inside archives are not filtered by extension.
+#
+# Default value: SMART
+
+# ReportEncryptedMime <0|1>
+#
+# Activates reporting of encrypted mime mails.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0 (disabled)
+#
+# Note: This setting has no meaning if all three ARCHIVE_SCAN, MAILBOX_SCAN and MIME_SCAN are disabled.
+
+# MalwareNamesDir </path/where/to/create/the/file>
+#
+# Sets the directory where SAVAPI should create a file containing the extracted malware
+# names.
+#
+# Available values: only absolute paths are accepted; relative paths will not be accepted
+# and the service will exit with an error.
+#
+# Default value: the SAVAPI scanning temporary path.
+#
+# Note: This option is ignored, if the option MalwareNamesExtract is disabled.
+
+# MalwareNamesExtract <0|1>
+#
+# Enables/ disables the extraction of malware names from memory to disk.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0 (disabled).
+#
+# Notes:
+#  - You can specify the directory path where the file will be created, by using the option
+#    MalwareNamesDir.
+#  - Since the malware names file is needed by SAVAPI, it is recommended not to alter it. If
+#    the file is deleted, moved or its content is modified, the engine may be unable to find the
+#    names of the viruses.
+#  - If the file has been altered, when first scanning an infected file, the terminal answer is set
+#    to "319 INCOMPLETE VDF_READ_ERROR". Then, subsequent SCAN commands would directly return the
+#    error "350 Failed to read VDF file".
+
+# =============================================================================
+# Logging related options
+# =============================================================================
+
+# LogFileName </path/to/log/file>
+#
+# Specifies the log file location and name. If this parameter is set, then file
+# logging is activated.
+#
+# Available values: only absolute paths are accepted; relative paths will not
+# be accepted and the service will exit with an error.
+#
+# Default value: none, logging in file is disabled by default.
+
+# ReportLevel <0-3>
+#
+# Specifies the log verbosity level.
+#
+# Available values:
+#  - 0 Log errors
+#  - 1 Log errors and alerts
+#  - 2 Log errors, alerts, warnings and info
+#  - 3 Log errors, alerts, warnings, info and debug messages
+#
+# Default value: 0
+#
+# Note: "alerts" represents information about potential malicious code.
+
+# LogRotate <0|1>
+#
+# Enables log rotation.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0 (disabled) on Unix 1 (enabled) on Windows
+#
+# Note: Check LogFileSize for more details.
+
+# LogFileSize <size>
+#
+# Sets the log file maximum allowed size.
+#
+# Available values: file size.
+#
+# Default value: 2M.
+#
+# Notes:
+#  - If log rotation is activated (LogRotate=1), the log file will be closed when
+#    the maximum size is reached and a new file is created and used for logging
+#    (ie: file "log" is renamed to "log.001", and the logging will continue to the
+#    file "log"). If rotation is not active (LogRotate=0) no action will be
+#    performed when maximum size is reached.
+#  - Size can include K, M, or G as a label. Otherwise the number is assumed to
+#    be in bytes. Examples include "100M" or "32K".
+#  - 1K = 1024 bytes. 1M = 1024^2 bytes. 1G = 1024^3 bytes.
+
+
+# LogTemplate ${DAY}/${MONTH}/${YEAR} ${HOUR}:${MINUTE}:${SECOND} ${HOST} ${PROGRAM}[${PID}]: ${SOURCE}: ${LEVEL}: ${MSG}
+#
+# Enables log messages template usage.
+#
+# Available templates are: SOURCE, LEVEL, YEAR, MONTH, DAY, HOUR, MINUTE, SECOND,
+# WEEKDAY, TZOFFSET, TZ, HOST, FULLHOST, PROGRAM, PID, MSG, TID, WINDATE, WINTIME
+#
+# Default value: "${DAY}/${MONTH}/${YEAR} ${HOUR}:${MINUTE}:${SECOND} ${HOST} ${PROGRAM}[${PID}]: ${SOURCE}: ${LEVEL}: ${MSG}".
+
+# SyslogFacility <value>
+#
+# Specified the facility for the Unix default system logger.
+#
+# Available values: desired system logger facility.
+#
+# Default value: "user".
+#
+# Note: This option is available only on Unix systems.
+
+# DisableSystemLogger <0|1>
+#
+# Activates/Deactivates the default operating system logger.
+#
+# Available values: 0 (system logger enabled) or 1 (system logger disabled).
+#
+# Default value: 0 (system logger enabled).
+
+
+# =============================================================================
+# APC related options
+# =============================================================================
+
+# APCMode <auto|disabled|check-only|full>
+#
+# Specifies the mode in which APC will be used for scanning files.
+#
+# Available values:
+#    auto       - will try to activate full mode if possible, otherwise it will be set to disabled
+#    disabled   - APC scanning disabled
+#    check-only - only send file hashes to the APC
+#    full       - full APC scanning functionality (send file hashes, upload files)
+#
+# Default value: auto
+
+# APCCertDir <path/to/the/cert/dir>
+#
+# Specifies the location of the certificate file.
+#
+# Notes:
+#  - The name of the certificate must be cacert.crt, otherwise the APC functionality will not work.
+#
+# Available values: only absolute paths are accepted; relative paths will not be
+# accepted and the service will exit with an error.
+#
+# Default value: the SAVAPI Service folder (the location where the SAVAPI
+# Service binary resides).
+
+# APCCacheSize <size>
+#
+# Size of APC cache in memory which will be used to temporarily store the results from Avira Protection Cloud and
+# use it later in order to save bandwidth.
+#
+# Notes:
+#  - A value of "0" means the APC cache is disabled.
+#  - The value will be truncated to size_t platform format
+#  - All values below 1024 will be automatically set to 1024.
+#  - A size can include K or M as a label. Otherwise the number is assumed
+#    to be in bytes. Examples include "100M" or "32K".
+#  - 1K = 1024 bytes. 1M = 1024^2 bytes.
+#
+# Available values: 0 - 100M
+# Default value: 5M.
+
+# APCCacheDumpFile <0|1>
+#
+# Enable APC cache dump. When SAVAPI starts, it will import the cache from the previous dump, if there is one.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 1 (enabled)
+
+# APCCacheDumpFilePath </path/to/dump/file>
+#
+# Specifies the cache dump file path.
+#
+# Available values: only absolute paths are accepted; relative paths will not
+# be accepted and the service will exit with an error.
+#
+# Default value: default Operating System temporary folder/savapi_apc_cache_xxxx.dat
+
+# APCConnectionTimeout <seconds>
+#
+# Specifies the number of seconds SAVAPI will wait for establishing a connection to APC, before timing out.
+# This value is applied for each individually scanned object (for example, a file in an archive).
+#
+# Available values: 0 - 86400
+# Default value: 20
+#
+# Notes:
+#  - A value of "0" sets the wait time to infinite
+#  - The value must be smaller than or equal to APCScanTimeout
+
+# APCScanTimeout <seconds>
+#
+# Specifies the number of seconds SAVAPI will wait for data transfer to/from APC before timing out.
+# This value is applied for each individually scanned object (for example, a file in an archive).
+#
+# Available values: 0 - 86400
+# Default value: 30
+#
+# Notes:
+#  - A value of "0" sets the wait time to infinite
+#  - The value must be greater than or equal to APCConnectionTimeout and smaller than or equal to ScanTimeout
+
+# APCBlackoutRetries <value>
+#
+# Specifies the maximum number of consecutive timeouts allowed before declaring APC unreachable.
+#
+# Available values: 0 - 32767 (0 - INT16_MAX)
+# Default value: 5
+#
+# Notes:
+#  - A value of "0" tells SAVAPI to always attempt to contact APC for scanning files
+#  - Timeouts are taken into consideration for each individually scanned object
+#    (for example, a file in an archive)
+
+# APCBlackoutTimeout <value>
+#
+# Specifies the number of seconds after which SAVAPI will try to establish another connection to APC.
+#
+# Available values: 1 - 86400
+# Default value: 300
+
+# APCCheckRiskRatingLevel <value>
+#
+# This option sets a minimum threshold for hash requests sent to the Avira Protection Cloud regarding the risk rating of the file.
+# The risk rating is based on a frequently updated mathematical model to evaluate the risks posed by a certain file.
+# A threshold of 0 hash requests to be sent even if they have a very low risk rating, while a value of 7 checks only the files with the highest assumed risk.
+#
+# Level 0 = Very Low Risk
+# Level 7 = Very High Risk
+#
+# Available values: 0 - 7
+# Default value: 4
+
+# APCUploadRiskRatingLevel <value>
+#
+# This option sets a minimum threshold for uploads into the Avira Protection Cloud regarding the risk rating of the file.
+# The risk rating is based on a frequently updated mathematical model to evaluate the risks posed by a certain file.
+# A threshold of 0 uploads files even if they have a very low risk rating, while a value of 7 uploads only the files with the highest assumed risk.
+#
+# Available values: 0 - 7
+# Default value: 4
+#
+# Note:
+#   - If APCCheckRiskRatingLevel is greater than APCUploadRiskRatingLevel, then the file will be uploaded only if
+#     the malware probability is greater than APCCheckRiskRatingLevel.
+# APCPEMode <disabled|check-only|full>
+#
+# This option specifies the mode in which APC will be used for scanning portable executable (PE) files.
+#
+# Available values:
+#    disabled   - PE files will not be scanned with APC
+#    check-only - only hashes of PE files will be checked with APC
+#    full       - full APC scanning functionality for PE files
+# Default value: full
+#
+# Notes:
+#  - When APCMode is "check-only", PE files will not be uploaded even if APCPEMode is "full".
+#  - This option depends on the value of APCMode.
+#  - Full APC PE functionality also depends on APC backend settings.
+
+# APCELFMode <disabled|check-only|full>
+#
+# This option specifies the mode in which APC will be used for scanning ELF (Unix executable) files.
+#
+# Available values:
+#    disabled   - ELF files will not be scanned with APC
+#    check-only - only hashes of ELF files will be checked with APC
+#    full       - full APC scanning functionality for ELF files
+# Default value: disabled
+#
+# Notes:
+#  - When APCMode is "check-only", ELF files will not be uploaded even if APCELFMode is "full".
+#  - This option depends on the value of APCMode.
+#  - Full APC ELF functionality also depends on APC backend settings.
+
+# APCMachOMode <disabled|check-only|full>
+#
+# This option specifies the mode in which APC will be used for scanning Mach-O and Apple Universal Binary files.
+#
+# Available values:
+#    disabled   - Mach-O files will not be scanned with APC
+#    check-only - only hashes of Mach-O files will be checked with APC
+#    full       - full APC scanning functionality for Mach-O files
+# Default value: disabled
+#
+# Notes:
+#  - When APCMode is "check-only", Mach-O files will not be uploaded even if APCMachOMode is "full".
+#  - This option depends on the value of APCMode.
+#  - Full APC Mach-O functionality also depends on APC backend settings.
+
+# APCFileExtensionsPolicy <auto|custom>
+#
+# This option specifies the policy of the files that will be scanned with APC.
+#
+# Available values:
+#    auto   - all files extensions supported by SAVAPI internal list will be scanned with APC
+#    custom - user-defined list of extensions to be scanned with APC
+#
+# Default value: custom
+
+# APCFileExtensionsDisabled <extensions>
+#
+# This option specifies a list of extensions of the files that will not be scanned with APC.
+#
+# Available values: a string containing semicolon separated extensions (including the dot)
+# Example: .xls;.bin;.doc
+# Default value: None
+#
+# Note: This option has a higher priority and will refine APCFileExtensionsPolicy option
+
+# APCFileExtensionsCheckOnly <extensions>
+#
+# This option specifies a list of extensions of the files that will be hashed-scanned with APC.
+#
+# Available values: a string containing semicolon separated extensions (including the dot)
+# Example: .xls;.bin;.doc
+# Default value: None
+#
+# Notes:
+#    - This option has a higher priority and will refine APCFileExtensionsPolicy option
+#    - This option depends on the value of APCMode
+
+# APCFileExtensionsFull <extensions>
+#
+# This option specifies a list of extension for the files that will be hashed-checked or uploaded to APC.
+#
+# Available values: a string containing semicolon separated extensions (including the dot)
+# Example: .xls;.bin;.doc
+# Default value: none
+#
+# Notes:
+#    - This option depends on the value of APCMode
+
+# =============================================================================
+# FPC related options
+# =============================================================================
+
+# FPC <0|1>
+#
+# Enable "False Positive Control" adding a new layer of security
+# regarding false positive prevention.
+#
+# Available values: 0 (disabled) or 1 (enabled).
+#
+# Default value: 0 (disabled)
+
+# FPCTimeout <seconds>
+#
+# Specifies the number of seconds SAVAPI will wait for FPC check before timing out.
+# This value is applied for each individually scanned object (for example, a file in an archive).
+#
+# Available values: 0 - 86400
+# Default value: 20
+#
+# Notes:
+#  - A value of "0" sets the wait time to infinite
+#  - The value must be smaller than ScanTimeout
+
+# FPCBlackoutTimeout <seconds>
+#
+# Specifies the number of seconds after which SAVAPI will try to establish another connection to FPC.
+#
+# Available values: 1 - 86400
+# Default value: 300
+
+# FPCBlackoutRetries <count>
+#
+# Specifies the maximum number of consecutive timeouts allowed before declaring FPC unreachable.
+#
+# Available values: 0 - 32767 (0 - INT16_MAX)
+# Default value: 5
+#
+# Notes:
+#  - A value of "0" tells SAVAPI to always attempt to contact FPC for checking files
+#  - Timeouts are taken into consideration for each individually scanned object
+#    (for example, a file in an archive)

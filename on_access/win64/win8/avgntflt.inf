@@ -1,0 +1,87 @@
+;;;
+;;; Avira GmbH - Anti-Virus - File System Filter Driver
+;;;
+;;; Copyright (c) 2010 Avira GmbH
+;;;
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = "AntiVirus"
+ClassGuid   = {b1d1a169-c54f-4379-81db-bee7d88d7454}
+Provider    = %ANTIVIR%
+DriverVer=10/12/2021,15.0.2110.297
+CatalogFile = avgntflt.cat
+
+[DestinationDirs]
+DefaultDestDir       = 12
+
+[DefaultInstall]
+OptionDesc  = %avgntfltServiceDesc%
+
+[DefaultInstall.Services]
+AddService  = %avgntfltServiceName%,,avgntflt.Service
+
+[DefaultUninstall]
+
+[DefaultUninstall.Services]
+DelService  = avgntflt
+
+;;
+;; Sources
+;;
+[avgntflt.DriverFiles]
+avgntflt.sys
+
+[SourceDisksNames]
+1 = %SourceDisk%
+
+[SourceDisksFiles]
+avgntflt.sys = 1
+
+;
+; Services Section
+;
+
+[avgntflt.Service]
+DisplayName      = %avgntfltServiceName%
+Description      = %avgntfltServiceDesc%
+ServiceBinary    = %12%\avgntflt.sys        ;%windir%\system32\drivers\avgntflt.sys
+ServiceType      = 2                        ;SERVICE_FILE_SYSTEM_DRIVER
+StartType        = 2
+ErrorControl     = 1                        ;SERVICE_ERROR_NORMAL
+LoadOrderGroup   = "FSFilter Anti-Virus"
+AddReg           = avgntflt.AddRegistry
+Dependencies     = FltMgr
+
+
+;
+; Registry Modifications
+;
+
+[avgntflt.AddRegistry]
+HKR,,"SupportedFeatures",0x00010001,0x3
+HKR,,"SDKMode",0x00010001,0x1
+HKR,%RegInstancesSubkeyName%,%RegDefaultInstanceValueName%,0x00000000,%DefaultInstance%
+HKR,%RegInstancesSubkeyName%"\"%Instance1.Name%,%RegAltitudeValueName%,0x00000000,%Instance1.Altitude%
+HKR,%RegInstancesSubkeyName%"\"%Instance1.Name%,%RegFlagsValueName%,0x00010001,%Instance1.Flags%
+HKLM,%avgntfltEvents%,TypesSupported,0x00010001,7
+HKLM,%avgntfltEvents%,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\avgntflt.sys"
+
+;;
+;; String Section
+;;
+
+[Strings]
+ANTIVIR                     = "Avira Operations GmbH & Co. KG"
+avgntfltServiceDesc         = "Avira mini-filter driver"
+avgntfltServiceName         = "avgntflt"
+avgntfltEvents              = "System\CurrentControlSet\Services\EventLog\System\avgntflt"
+RegInstancesSubkeyName      = "Instances"
+RegDefaultInstanceValueName = "DefaultInstance"
+RegAltitudeValueName        = "Altitude"
+RegFlagsValueName           = "Flags"
+DefaultInstance             = "avgntflt"
+Instance1.Name              = "avgntflt"
+Instance1.Altitude          = "320500"
+Instance1.Flags             = 0x0
+SourceDisk                  = "Avira Source"

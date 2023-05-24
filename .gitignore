@@ -1,0 +1,7 @@
+*.vdf
+avupdate.log
+info.txt
+quarantine/
+savacli.log
+savapi.log
+scancl.log

@@ -1,0 +1,91 @@
+;;;
+;;; avkmgr.sys install file
+;;; Copyright (c) 2011 Avira Operations GmbH & Co. KG. All rights reserved.
+;;;
+
+[Version]
+signature   =   "$Windows NT$"
+Provider    =   %AVIRA%
+Class       =   "AntiVirus"
+ClassGuid   =   {b1d1a169-c54f-4379-81db-bee7d88d7454}
+DriverVer=11/16/2016,15.0.44.17
+CatalogFile =   avkmgr.cat
+
+;;
+;; Default install sections
+;;
+
+[DefaultInstall]
+OptionDesc          = %avkmgrServiceDesc%
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[avkmgr.DriverFiles]
+avkmgr.sys
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+avkmgr.sys    = 1
+
+[DefaultInstall.Services]
+AddService          = %avkmgrServiceName%,,avkmgr.Service,avkmgr.EventLog.Install
+
+;;
+;; Default uninstall sections
+;;
+
+[DefaultUninstall]
+DelReg			 = avkmgr.DelRegistry
+
+[DefaultUninstall.Services]
+DelService = %avkmgrServiceName%,0x200
+
+;
+; Services Section
+;
+
+[avkmgr.Service]
+DisplayName      = %avkmgrServiceName%
+Description      = %avkmgrServiceDesc%
+ServiceBinary    = %12%\avkmgr.sys
+ServiceType      = 1
+StartType        = 1
+ErrorControl     = 1
+AddReg           = avkmgr.AddRegistry
+
+;
+; Registry Modifications
+;
+[avkmgr.EventLog.Install]
+AddReg = avkmgr.EventLog.AddReg
+DelReg = avkmgr.EventLog.DelReg
+ 
+[avkmgr.EventLog.AddReg]
+HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\avkmgr.sys"
+HKR,,TypesSupported,0x00010001,7
+
+[avkmgr.EventLog.DelReg]
+HKR,,EventMessageFile,0x00020000
+HKR,,TypesSupported,0x00010001,7
+
+
+[avkmgr.AddRegistry]
+HKR,,Group,0x00000000,"Avira"
+HKR,,Tag,0x00010001,1
+
+[avkmgr.DelRegistry]
+HKR,,Group
+HKR,,Tag
+
+;;
+;; String Section
+;;
+
+[Strings]
+AVIRA               = "Avira Operations GmbH & Co. KG"
+avkmgrServiceDesc   = "Avira Manager Driver"
+avkmgrServiceName   = "avkmgr"
+Disk1               = "Avkmgr Source Media"

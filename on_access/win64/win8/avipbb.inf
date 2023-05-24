@@ -1,0 +1,98 @@
+;;;
+;;; avipbb.sys install file
+;;; Copyright (c) 2011 Avira Operations GmbH & Co. KG. All rights reserved.
+;;;
+
+[Version]
+signature   = "$Windows NT$"
+Provider    =   %AVIRA%
+Class       = "AntiVirus"
+ClassGuid   = {b1d1a169-c54f-4379-81db-bee7d88d7454}
+DriverVer=02/04/2021,15.0.2102.274
+CatalogFile = avipbb.cat
+
+;;
+;; Default install sections
+;;
+
+[DefaultInstall]
+OptionDesc = %avipbbServiceDesc%
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[avipbb.DriverFiles]
+avipbb.sys
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+avipbb.sys = 1
+
+[DefaultInstall.Services]
+AddService          = %avipbbServiceName%,,avipbb.Service,avipbb.EventLog.Install
+
+;;
+;; Default uninstall sections
+;;
+
+[DefaultUninstall]
+DelReg = avipbb.DelRegistry
+
+[DefaultUninstall.Services]
+DelService = %avipbbServiceName%,0x200
+
+;
+; Services Section
+;
+
+[avipbb.Service]
+DisplayName      = %avipbbServiceName%
+Description      = %avipbbServiceDesc%
+ServiceBinary    = %12%\avipbb.sys
+ServiceType      = 1
+StartType        = 1
+ErrorControl     = 1
+AddReg           = avipbb.AddRegistry
+
+;
+; Registry Modifications
+;
+[avipbb.EventLog.Install]
+AddReg = avipbb.EventLog.AddReg
+DelReg = avipbb.EventLog.DelReg
+ 
+[avipbb.EventLog.AddReg]
+HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\avipbb.sys"
+HKR,,TypesSupported,0x00010001,7
+
+[avipbb.EventLog.DelReg]
+HKR,,EventMessageFile
+HKR,,TypesSupported
+
+
+[avipbb.AddRegistry]
+HKR,,Group,0x00000000,"Avira"
+HKR,,Tag,0x00010001,2
+HKR,,%avipbbDebugFlags%,0x00000000 ,0
+HKR,,DependOnService,0x00000000,"avkmgr"
+
+
+
+[avipbb.DelRegistry]
+HKR,,Group
+HKR,,Tag
+HKR,,%avipbbDebugFlags%
+HKR,,DependOnService
+
+;;
+;; String Section
+;;
+
+[Strings]
+AVIRA               = "Avira Operations GmbH & Co. KG"
+avipbbServiceDesc   = "Avira Security Enhancement Driver"
+avipbbServiceName   = "avipbb"
+avipbbDebugFlags    = "DebugFlags"
+Disk1               = "Avipbb Source Media"
