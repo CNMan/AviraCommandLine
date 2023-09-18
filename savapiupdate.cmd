@@ -3,3 +3,6 @@ avupdate.exe --no-config --log=avupdate.log --log-append --install-dir=.\ --temp
 rd /s /q idx\
 rd /s /q tmp\
 pause
+del avupdate.log
+del savacli.log
+del scancl.log

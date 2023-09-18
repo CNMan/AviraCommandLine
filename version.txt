@@ -1,9 +1,9 @@
 Product build:            Windows (x64)
-SAVAPI service version:   4.15.17.118
+SAVAPI service version:   4.15.19.147
 
 Component versions:
- SAVAPI library version:  4.15.17.118
- Engine version:          8.3.66.106
- Packlib version:         8.5.2.130
- VDF version:             8.20.3.124
- APC library version:     2.11.3.3
+ SAVAPI library version:  4.15.19.147
+ Engine version:          8.3.66.160
+ Packlib version:         8.6.2.14
+ VDF version:             8.20.8.242
+ APC library version:     2.11.3.8
